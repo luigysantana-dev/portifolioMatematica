@@ -309,3 +309,196 @@ const InterfaceController = {
         });
     }
 };
+
+/* ==========================================================================
+   BANCO DE DADOS COMPLETO (APENAS TEXTOS E RESOLUÇÕES)
+   ========================================================================== */
+const resolutionsDatabase = {
+    // PÁGINA 67 - EXPONENCIAIS
+    "p67_q6": {
+        pageNumber: "67 - Ex. 6",
+        title: "Análise da Função Exponencial f(x) = (5/4)ˣ",
+        enunciado: "Sendo f(x) = (5/4)ˣ para x ∈ ℝ, analise as propriedades da função para determinar a afirmação correta sobre o seu comportamento gráfico e conjunto imagem.",
+        steps: [
+            "Observe a base da função exponencial: a = 5/4. Como 5/4 > 1, a função é estritamente crescente.",
+            "As funções exponenciais elementares da forma f(x) = aˣ com a > 0 e a ≠ 1 possuem como conjunto imagem apenas os valores estritamente maiores que zero.",
+            "A curva se aproxima do eixo x sem nunca tocá-lo (assíntota horizontal em y = 0), logo Im(f) = ]0, +∞[."
+        ],
+        finalAnswer: "Alternativa correta: c) a imagem é Im(f) = ]0, +∞["
+    },
+    "p67_q7": {
+        pageNumber: "67 - Ex. 7",
+        title: "Crescimento de Cultura de Bactérias",
+        enunciado: "O gráfico mostra a evolução do número de bactérias em certa cultura. Quantas bactérias haverá aproximadamente decorridos 30 minutos do início?",
+        steps: [
+            "Modelamos a lei de crescimento a partir do gráfico: N(t) = N₀ · bᵗ. Para t = 0, N(0) = 10⁴, portanto N₀ = 10⁴.",
+            "Do gráfico, quando t = 3 horas, N(3) = 8 · 10⁴. Substituindo: 10⁴ · b³ = 8 · 10⁴ ⟹ b³ = 8 ⟹ b = 2. A equação é N(t) = 10⁴ · 2ᵗ.",
+            "O tempo pedido é 30 minutos, o que equivale a t = 0,5 horas (ou 1/2).",
+            "Calculamos N(0,5) = 10⁴ · 2^(1/2) = 10⁴ · √2. Adotando √2 ≈ 1,414, temos 10.000 · 1,414 = 14.140."
+        ],
+        finalAnswer: "Aproximadamente 14.140 bactérias."
+    },
+    "p67_q8": {
+        pageNumber: "67 - Ex. 8",
+        title: "Cálculos Exponenciais Aproximados",
+        enunciado: "Utilize regras de exponenciação para determinar os valores reais aproximados para as expressões: a) 2^(4e) e b) e^(3/2).",
+        steps: [
+            "Para o item (a), substituímos o valor irracional da base neperiana e ≈ 2,71828 no expoente: 4 · 2,71828 ≈ 10,8731.",
+            "Calculamos a potência resultante: 2^(10,8731) ≈ 1875,59.",
+            "Para o item (b), transformamos o expoente fracionário em radical: e^(3/2) = √(e³).",
+            "Aproximando o valor sob a raiz: √(2,71828³) = √20,0855 ≈ 4,48."
+        ],
+        finalAnswer: "a) ≈ 1875,59  |  b) ≈ 4,48"
+    },
+
+    // PÁGINA 89 - CONCEITOS DE LOGARITMOS
+    "p89_q1": {
+        pageNumber: "89 - Ex. 1",
+        title: "Aplicação da Definição de Logaritmos",
+        enunciado: "Calcule os valores utilizando a definição fundamental log_a(b) = x ⟺ aˣ = b: a) log₆ 36, b) log₁₀ 0,01, c) log_(1/4) 2√2.",
+        steps: [
+            "Item a: log₆ 36 = x ⟺ 6ˣ = 36. Como 36 = 6², temos x = 2.",
+            "Item b: log₁₀ 0,01 = x ⟺ 10ˣ = 0,01. Como 0,01 = 1/100 = 10⁻², temos x = -2.",
+            "Item c: log_(1/4) 2√2 = x ⟺ (1/4)ˣ = 2√2 ⟹ (2⁻²)ˣ = 2¹ · 2^(1/2) ⟹ 2⁻²ˣ = 2^(3/2) ⟹ -2x = 3/2 ⟹ x = -3/4."
+        ],
+        finalAnswer: "a) 2  |  b) -2  |  c) -3/4"
+    },
+    "p89_q2": {
+        pageNumber: "89 - Ex. 2",
+        title: "Uso de Dados Exponenciais para Logaritmos",
+        enunciado: "Calcule o valor de log₁₀ 1,4 sabendo que 2 = 10^(0,301) e 7 = 10^(0,845).",
+        steps: [
+            "Escrevemos o logaritmando na forma de fração: 1,4 = 14 / 10.",
+            "Substituindo na expressão: log₁₀(14/10) = log₁₀(2 · 7) - log₁₀(10).",
+            "Aplicando as propriedades operatórias de multiplicação e divisão: log₁₀(2) + log₁₀(7) - log₁₀(10).",
+            "Por definição, se 2 = 10^(0,301), then log₁₀(2) = 0,301. Se 7 = 10^(0,845), então log₁₀(7) = 0,845.",
+            "Efetuamos a soma aritmética final: 0,301 + 0,845 - 1 = 0,146."
+        ],
+        finalAnswer: "log₁₀ 1,4 = 0,146"
+    },
+    "p89_q3": {
+        pageNumber: "89 - Ex. 3",
+        title: "Logaritmo de Logaritmo",
+        enunciado: "Determine qual número natural representa a expressão composta log₁₀ (log₁₀ 10).",
+        steps: [
+            "Resolvemos primeiro o logaritmo que se encontra no parêntese interno: log₁₀ 10.",
+            "Como a base e o logaritmando são iguais, log₁₀ 10 = 1.",
+            "Substituímos o resultado na parte externa da expressão: log₁₀ (1).",
+            "O logaritmo do número 1 em qualquer base permitida é igual a 0."
+        ],
+        finalAnswer: "O valor da expressão é 0"
+    },
+    "p89_q4": {
+        pageNumber: "89 - Ex. 4",
+        title: "Simplificação de Expressões com Propriedades",
+        enunciado: "Calcule o valor numérico real da expressão: log₇ 7³ + log₉ 1⁶ + 2^(log₂ 5).",
+        steps: [
+            "Análise do primeiro termo: log₇ 7³ = 3 (propriedade do expoente do logaritmando).",
+            "Análise do segundo termo: Como 1⁶ = 1, a expressão vira log₉ 1, cujo valor é igual a 0.",
+            "Análise do terceiro termo: Utilizando a propriedade da identidade exponencial a^(log_a b) = b, temos 2^(log₂ 5) = 5.",
+            "Somando os resultados parciais obtidos: 3 + 0 + 5 = 8."
+        ],
+        finalAnswer: "Resultado final = 8"
+    },
+
+    // PÁGINA 104 - FUNÇÕES LOGARÍTMICAS
+    "p104_q13": {
+        pageNumber: "104 - Ex. 13",
+        title: "Análise Gráfica de f(x) = log_(1/3) x",
+        enunciado: "Determine os pontos chaves e descreva o comportamento para o esboço gráfico da função f(x) = log_(1/3) x.",
+        steps: [
+            "Identifique a base do logaritmo: b = 1/3. Como 0 < 1/3 < 1, a função é estritamente decrescente.",
+            "Calculamos pontos notáveis para o mapeamento das coordenadas no plano cartesiano:",
+            "Para x = 1 ⟹ y = log_(1/3) 1 = 0, gerando o ponto (1, 0).",
+            "Para x = 3 ⟹ y = log_(1/3) 3 = -1, gerando o ponto (3, -1).",
+            "Para x = 1/3 ⟹ y = log_(1/3) (1/3) = 1, gerando o ponto (1/3, 1)."
+        ],
+        finalAnswer: "Função decrescente, corta o eixo x em (1,0) e passa por (3,-1)."
+    },
+    "p104_q14": {
+        pageNumber: "104 - Ex. 14",
+        title: "Domínio e Inversa da Função log₂ (4x - 1)",
+        enunciado: "Dada a função f(x) = log₂ (4x - 1), determine: a) a classificação de crescimento, b) o domínio de existência, c) a expressão algébrica da função inversa.",
+        steps: [
+            "Item a: A base é 2. Como 2 > 1, a função é estritamente crescente.",
+            "Item b: Pela condição de existência de logaritmos, o logaritmando precisa ser positivo: 4x - 1 > 0 ⟹ 4x > 1 ⟹ x > 1/4.",
+            "Item c: Para achar a inversa, trocamos x por y e isolamos a nova variável: x = log₂ (4y - 1) ⟹ 2ˣ = 4y - 1 ⟹ 4y = 2ˣ + 1 ⟹ y = (2ˣ + 1)/4."
+        ],
+        finalAnswer: "a) Crescente  |  b) Domínio = {x ∈ ℝ | x > 1/4}  |  c) f⁻¹(x) = (2ˣ + 1)/4"
+    },
+    "p104_q15": {
+        pageNumber: "104 - Ex. 15",
+        title: "Área de Região Retangular no Gráfico",
+        enunciado: "A curva do gráfico representa a função f(x) = log₂ (x/2). Encontre a medida da área do retângulo hachurado.",
+        steps: [
+            "Encontramos a base do retângulo calculando a distância entre as coordenadas x informadas: Base = 4 - 1 = 3.",
+            "Determinamos a altura obtendo o valor da função no ponto limite superior x = 4: f(4) = log₂ (4/2) = log₂ 2 = 1.",
+            "O limite inferior do retângulo está alinhado no eixo horizontal y = 0, logo a Altura = 1 - 0 = 1.",
+            "Calculamos a área multiplicando os valores da base e da altura: Área = Base · Altura = 3 · 1 = 3."
+        ],
+        finalAnswer: "Área = 3 unidades de área."
+    },
+
+    // MATRIZES
+    "matriz_q1": {
+        pageNumber: "Matrizes - Q1",
+        title: "Matriz de Adjacência de Rede Viária",
+        enunciado: "Construa a matriz de conectividade A = [a_ij]₄ₓ₄ para as quatro cidades do mapa rodoviário, adotando 1 se há ligação direta e 0 caso contrário.",
+        steps: [
+            "Linha 1 (Cidade 1): possui ligação direta apenas para a cidade 2. Linha = [0, 1, 0, 0].",
+            "Linha 2 (Cidade 2): possui conexões diretas com as cidades 1, 3 e 4. Linha = [1, 0, 1, 1].",
+            "Linha 3 (Cidade 3): possui conexões diretas com as cidades 2 e 4. Linha = [0, 1, 0, 1].",
+            "Linha 4 (Cidade 4): possui conexões diretas com as cidades 2 e 3. Linha = [0, 1, 1, 0]."
+        ],
+        finalAnswer: "Matriz A = [[0, 1, 0, 0], [1, 0, 1, 1], [0, 1, 0, 1], [0, 1, 1, 0]]"
+    },
+
+    // GEOMETRIA PLANA (FIGURAS COMPOSTAS)
+    "geo_a": {
+        pageNumber: "Geometria - Figura A",
+        title: "Área do Polígono em L",
+        enunciado: "Calcule a área total da figura em formato de L com medidas externas de 140 cm, 80 cm e recortes internos.",
+        steps: [
+            "Dividimos o L verticalmente em duas partes retangulares simples.",
+            "Parte 1 (Retângulo vertical esquerdo): base de 80 cm e altura de 80 cm. Área = 80 · 80 = 6.400 cm².",
+            "Parte 2 (Retângulo horizontal direito): base restante de 140 cm - 80 cm = 60 cm. A altura informada é de 30 cm. Área = 60 · 30 = 1.800 cm².",
+            "Somamos as áreas parciais: 6.400 + 1.800 = 8.200 cm²."
+        ],
+        finalAnswer: "Área total = 8.200 cm²"
+    },
+    "geo_b": {
+        pageNumber: "Geometria - Figura B",
+        title: "Área do Triângulo Escaleno",
+        enunciado: "Calcule a área do triângulo obtusângulo que possui base de 9 cm e uma projeção de altura externa medindo 4 cm.",
+        steps: [
+            "A fórmula da área de qualquer triângulo é dada pelo produto da base pela altura dividido por dois.",
+            "A base do triângulo mede 9 cm e a altura perpendicular relativa a essa base mede 4 cm.",
+            "Aplicando os valores na fórmula: Área = (9 · 4) / 2 = 36 / 2 = 18 cm²."
+        ],
+        finalAnswer: "Área total = 18 cm²"
+    },
+    "geo_c": {
+        pageNumber: "Geometria - Figura C",
+        title: "Área de Triângulo por Semiperímetro",
+        enunciado: "Calcule a área do triângulo de lados medindo a = 7 cm, b = 8 cm e c = 9 cm.",
+        steps: [
+            "Utilizamos a Fórmula de Heron. Primeiro calculamos o semiperímetro p = (7 + 8 + 9) / 2 = 12 cm.",
+            "Escrevemos o termo do produto sob o radical: Área = √(12 · (12-7) · (12-8) · (12-9)).",
+            "Simplificando os termos: Área = √(12 · 5 · 4 · 3) = √720.",
+            "Fatorando o radicando para extrair a raiz simplificada: √720 = √(144 · 5) = 12√5 cm²."
+        ],
+        finalAnswer: "Área = 12√5 cm² (aproximadamente 26,83 cm²)"
+    },
+    "geo_d": {
+        pageNumber: "Geometria - Figura D",
+        title: "Área da Composição Retângulo-Triângulo",
+        enunciado: "Determine a área da figura irregular composta por uma base retangular de 40 m por 30 m e topo triangular.",
+        steps: [
+            "Dividimos o cálculo nas duas formas planas explícitas.",
+            "Área da base retangular inferior: Área = base · altura = 40 · 30 = 1.200 m².",
+            "Área do triângulo retângulo superior: Cateto base mede 40 m e cateto altura mede 30 m. Área = (40 · 30) / 2 = 600 m².",
+            "Somamos as duas superfícies para o resultado consolidado: 1.200 + 600 = 1.800 m²."
+        ],
+        finalAnswer: "Área total = 1.800 m²"
+    }
+};
